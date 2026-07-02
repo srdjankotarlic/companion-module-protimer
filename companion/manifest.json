@@ -1,0 +1,26 @@
+{
+  "id": "protimer",
+  "name": "protimer",
+  "shortname": "ProTimer",
+  "description": "Control ProTimer — a free, open-source stage timer for live production (macOS/Windows). Start/pause, reset, GO next cue, blackout, adjust time, set duration and send speaker messages.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": "https://github.com/srdjankotarlic/companion-module-protimer.git",
+  "bugs": "https://github.com/srdjankotarlic/companion-module-protimer/issues",
+  "maintainers": [
+    {
+      "name": "Srdjan Kotarlic",
+      "email": "kotagimna@gmail.com"
+    }
+  ],
+  "legacyIds": [],
+  "runtime": {
+    "type": "node18",
+    "api": "nodejs-ipc",
+    "apiVersion": "0.0.0",
+    "entrypoint": "../src/main.js"
+  },
+  "manufacturer": "ProTimer",
+  "products": ["ProTimer"],
+  "keywords": ["timer", "stage timer", "countdown", "rundown", "live production"]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "protimer",
+  "version": "1.0.0",
+  "main": "src/main.js",
+  "license": "MIT",
+  "repository": "https://github.com/srdjankotarlic/companion-module-protimer",
+  "author": "Srdjan Kotarlic",
+  "description": "Bitfocus Companion module for ProTimer — free open-source stage timer",
+  "scripts": {
+    "package": "companion-module-build"
+  },
+  "dependencies": {
+    "@companion-module/base": "~1.12.0"
+  },
+  "devDependencies": {
+    "@companion-module/tools": "^2.1.0"
+  }
+}
