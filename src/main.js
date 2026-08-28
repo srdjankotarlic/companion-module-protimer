@@ -1,10 +1,9 @@
-const { InstanceBase, InstanceStatus, Regex, runEntrypoint } = require('@companion-module/base')
+const { InstanceBase, InstanceStatus, Regex } = require('@companion-module/base')
 const { buildActions } = require('./actions')
 const { buildFeedbacks } = require('./feedbacks')
-const { buildPresets } = require('./presets')
+const { buildPresets, PRESET_STRUCTURE } = require('./presets')
 const { ProTimerClient, stateVariables, timerPhase } = require('./protimer-client')
 const { VARIABLE_DEFINITIONS } = require('./variables')
-const UpgradeScripts = require('./upgrades')
 
 const STATUS_MAP = {
 	ok: InstanceStatus.Ok,
@@ -28,7 +27,7 @@ class ProTimerInstance extends InstanceBase {
 		this.setActionDefinitions(buildActions(this))
 		this.setFeedbackDefinitions(buildFeedbacks(this))
 		this.setVariableDefinitions(VARIABLE_DEFINITIONS)
-		this.setPresetDefinitions(buildPresets())
+		this.setPresetDefinitions(PRESET_STRUCTURE, buildPresets())
 		this.refreshVariables()
 		this.client.start(config)
 		this.tick = setInterval(() => {
@@ -88,7 +87,7 @@ class ProTimerInstance extends InstanceBase {
 	onState(state) {
 		this.state = state
 		this.refreshVariables()
-		this.checkFeedbacks()
+		this.checkAllFeedbacks()
 	}
 
 	getPhase() {
@@ -100,6 +99,4 @@ class ProTimerInstance extends InstanceBase {
 	}
 }
 
-runEntrypoint(ProTimerInstance, UpgradeScripts)
-
-module.exports = { ProTimerInstance }
+module.exports = ProTimerInstance

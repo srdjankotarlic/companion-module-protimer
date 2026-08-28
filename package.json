@@ -11,7 +11,8 @@
 		"format:check": "prettier -c .",
 		"test": "node --test",
 		"package": "companion-module-build",
-		"check": "yarn format:check && yarn test && yarn package"
+		"check:package": "node scripts/check-built-module.mjs",
+		"check": "yarn format:check && yarn test && yarn package && yarn check:package"
 	},
 	"engines": {
 		"node": "^22.20",
