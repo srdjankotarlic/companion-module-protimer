@@ -2,7 +2,7 @@
 
 [Bitfocus Companion](https://bitfocus.io/companion) module for **[ProTimer](https://github.com/srdjankotarlic/protimer)** — a free, open-source stage timer for live production (macOS & Windows).
 
-Gives you Stream Deck buttons for: Start/Pause, Reset, GO next cue, Blackout, ±time, set duration, speaker messages and on-screen text — plus live feedbacks (running = green, blackout = red) and a `$(protimer:time)` variable you can put on a button face.
+Gives you ready-made Stream Deck presets for Start/Pause, Reset, GO next cue, Blackout, time adjustment, speaker messages and on-screen text. Live feedbacks cover connection, warning colors, overtime, running, blackout and messages; variables include the timer plus current and next rundown cues.
 
 See [companion/HELP.md](companion/HELP.md) for setup and the full action list.
 
@@ -16,6 +16,8 @@ ProTimer also works with Companion's built-in **Generic HTTP** module — every 
 git clone https://github.com/srdjankotarlic/companion-module-protimer.git
 cd companion-module-protimer
 npm install
+npm test
+npm run check
 ```
 
 Then in Companion: **Settings → Developer modules path** → point it at the parent folder of this repo and the module appears in the connections list.
@@ -28,8 +30,7 @@ npm run package
 
 ## Status
 
-Working implementation, pending submission to the official Companion module registry
-(via [bitfocus/companion-module-requests](https://github.com/bitfocus/companion-module-requests)).
+Version 1.1 uses Companion's current Node 22 runtime and module-base 2.x API. Official Companion registry submission is pending; local developer-module installation works today.
 
 ## License
 
