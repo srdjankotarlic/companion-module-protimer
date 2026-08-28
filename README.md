@@ -15,9 +15,10 @@ ProTimer also works with Companion's built-in **Generic HTTP** module — every 
 ```bash
 git clone https://github.com/srdjankotarlic/companion-module-protimer.git
 cd companion-module-protimer
-npm install
-npm test
-npm run check
+corepack enable
+yarn install --immutable
+yarn test
+yarn check
 ```
 
 Then in Companion: **Settings → Developer modules path** → point it at the parent folder of this repo and the module appears in the connections list.
@@ -25,7 +26,7 @@ Then in Companion: **Settings → Developer modules path** → point it at the p
 Package for distribution:
 
 ```bash
-npm run package
+yarn package
 ```
 
 ## Status
