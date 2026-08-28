@@ -1,18 +1,30 @@
 {
-  "name": "protimer",
-  "version": "1.0.0",
-  "main": "src/main.js",
-  "license": "MIT",
-  "repository": "https://github.com/srdjankotarlic/companion-module-protimer",
-  "author": "Srdjan Kotarlic",
-  "description": "Bitfocus Companion module for ProTimer — free open-source stage timer",
-  "scripts": {
-    "package": "companion-module-build"
-  },
-  "dependencies": {
-    "@companion-module/base": "~1.12.0"
-  },
-  "devDependencies": {
-    "@companion-module/tools": "^2.1.0"
-  }
+	"name": "protimer",
+	"version": "1.1.0",
+	"main": "src/main.js",
+	"license": "MIT",
+	"repository": "https://github.com/srdjankotarlic/companion-module-protimer",
+	"author": "Srdjan Kotarlic",
+	"description": "Bitfocus Companion module for ProTimer — free open-source stage timer",
+	"scripts": {
+		"format": "prettier -w .",
+		"format:check": "prettier -c .",
+		"test": "node --test",
+		"package": "companion-module-build",
+		"check:package": "node scripts/check-built-module.mjs",
+		"check": "yarn format:check && yarn test && yarn package && yarn check:package"
+	},
+	"engines": {
+		"node": "^22.20",
+		"yarn": "^4"
+	},
+	"dependencies": {
+		"@companion-module/base": "~2.1.3"
+	},
+	"devDependencies": {
+		"@companion-module/tools": "^3.1.0",
+		"prettier": "^3.8.3"
+	},
+	"prettier": "@companion-module/tools/.prettierrc.json",
+	"packageManager": "yarn@4.17.0"
 }
