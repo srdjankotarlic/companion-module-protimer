@@ -2,6 +2,8 @@
 
 Control [ProTimer](https://github.com/srdjankotarlic/protimer), a free and open-source stage timer for Windows and Apple Silicon macOS.
 
+Requires Bitfocus Companion 4.3 or newer.
+
 ## Configuration
 
 1. Open ProTimer on the computer running the show.
@@ -36,13 +38,15 @@ Starter presets are grouped by purpose:
 
 ## Variables
 
-- `$(protimer:time)` - formatted live timer
-- `$(protimer:remaining_seconds)` - remaining or elapsed seconds
-- `$(protimer:running)`, `$(protimer:mode)`, `$(protimer:phase)`
-- `$(protimer:connected)`, `$(protimer:blackout)`
-- `$(protimer:current_cue)`, `$(protimer:total_cues)`
-- `$(protimer:current_cue_name)`, `$(protimer:next_cue_name)`
-- `$(protimer:message)`, `$(protimer:on_screen_text)`
+- `$(this:time)` - formatted live timer
+- `$(this:remaining_seconds)` - remaining or elapsed seconds
+- `$(this:running)`, `$(this:mode)`, `$(this:phase)`
+- `$(this:connected)`, `$(this:blackout)`
+- `$(this:current_cue)`, `$(this:total_cues)`
+- `$(this:current_cue_name)`, `$(this:next_cue_name)`
+- `$(this:message)`, `$(this:on_screen_text)`
+
+`this` refers to the ProTimer connection that owns the preset, so the variables continue to work if you rename the connection in Companion.
 
 ## Feedbacks
 

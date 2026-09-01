@@ -46,7 +46,7 @@ function buildPresets() {
 	return {
 		time_display: button(
 			'Live timer display',
-			'$(protimer:time)',
+			'$(this:time)',
 			[],
 			[
 				feedback('warning_yellow', { bgcolor: COLORS.yellow, color: COLORS.black }),
@@ -55,13 +55,9 @@ function buildPresets() {
 			],
 			{ size: '24' },
 		),
-		cue_display: button(
-			'Current and next cue',
-			'$(protimer:current_cue_name)\nNEXT: $(protimer:next_cue_name)',
-			[],
-			[],
-			{ size: '14' },
-		),
+		cue_display: button('Current and next cue', '$(this:current_cue_name)\nNEXT: $(this:next_cue_name)', [], [], {
+			size: '14',
+		}),
 		start_pause: button(
 			'Start / pause',
 			'START',
@@ -69,7 +65,7 @@ function buildPresets() {
 			[feedback('running', { bgcolor: COLORS.green, color: COLORS.white, text: 'PAUSE' })],
 		),
 		reset: button('Reset', 'RESET', [action('reset')], [], { bgcolor: COLORS.mutedRed }),
-		go: button('GO to next cue', 'GO\n$(protimer:next_cue_name)', [action('go')], [], {
+		go: button('GO to next cue', 'GO\n$(this:next_cue_name)', [action('go')], [], {
 			bgcolor: COLORS.blue,
 		}),
 		add_minute: button('Add one minute', '+1 MIN', [action('adjust', { seconds: 60 })], [], {

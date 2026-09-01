@@ -1,4 +1,4 @@
-# companion-module-protimer
+# companion-module-srdjankotarlic-protimer
 
 [Bitfocus Companion](https://bitfocus.io/companion) module for **[ProTimer](https://github.com/srdjankotarlic/protimer)** — a free, open-source stage timer for live production (macOS & Windows).
 
@@ -6,13 +6,15 @@ Gives you ready-made Stream Deck presets for Start/Pause, Reset, GO next cue, Bl
 
 See [companion/HELP.md](companion/HELP.md) for setup and the full action list.
 
-## Install in Companion 4
+## Compatibility
 
-1. Download [`protimer-1.1.0.tgz`](https://github.com/srdjankotarlic/companion-module-protimer/releases/download/v1.1.0/protimer-1.1.0.tgz).
-2. Open Companion and go to **Modules → Import module package**.
-3. Select the downloaded `.tgz`, add a ProTimer connection, and enter the host, port, and token shown in ProTimer's **Network - OBS / Phone** panel.
+This module targets Companion's Node 22 and module API 2.0 runtime and requires **Companion 4.3 or newer**.
 
-The package is the normal user install while official Companion registry submission is pending. You do not need Node.js, Git, or a developer-modules folder.
+## Install
+
+Once the first release is accepted into the official Companion registry, install ProTimer from Companion's **Modules** page and add a ProTimer connection. Enter the host, port, and token shown in ProTimer's **Network - OBS / Phone** panel.
+
+For pre-release testing, run `yarn package` and import the generated `srdjankotarlic-protimer-2.0.0.tgz` through **Modules → Import module package**.
 
 ## Try it now (no module needed)
 
@@ -21,8 +23,8 @@ ProTimer also works with Companion's built-in **Generic HTTP** module — every 
 ## Development
 
 ```bash
-git clone https://github.com/srdjankotarlic/companion-module-protimer.git
-cd companion-module-protimer
+git clone https://github.com/bitfocus/companion-module-srdjankotarlic-protimer.git
+cd companion-module-srdjankotarlic-protimer
 corepack enable
 yarn install --immutable
 yarn test
@@ -39,7 +41,7 @@ yarn package
 
 ## Status
 
-Version 1.1 uses Companion's current Node 22 runtime and module-base 2.x API. Official Companion registry submission is pending; the packaged `.tgz` works in Companion 4 today.
+Version 2.0 is prepared for first-release review in the official Companion registry. Until that review is accepted, use a locally built package for testing.
 
 ## License
 

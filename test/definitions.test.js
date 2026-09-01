@@ -20,6 +20,9 @@ test('presets reference existing actions and feedbacks', () => {
 	assert.ok(Object.keys(presets).length >= 12)
 	for (const preset of Object.values(presets)) {
 		assert.equal(preset.type, 'simple')
+		for (const variableReference of preset.style.text.matchAll(/\$\(([^:]+):/g)) {
+			assert.equal(variableReference[1], 'this', 'preset variables must follow the selected connection label')
+		}
 		for (const step of preset.steps) {
 			for (const action of step.down) assert.ok(actions[action.actionId], `missing action ${action.actionId}`)
 		}
